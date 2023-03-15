@@ -16,16 +16,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnEnviar=findViewById(R.id.btnEnviar);
+        Button btnEnviar=findViewById(R.id.btnEnviar); //acha o botão pelo id
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText etDigiteAqui = findViewById(R.id.etDigiteAqui);
-                String texto = etDigiteAqui.getText().toString();
-                Intent intent = new Intent(MainActivity.this, ProximaActivity.class);
-                startActivity(intent);
-                intent.putExtra("texto", texto);
-                startActivity(intent);
+                EditText etDigiteAqui = findViewById(R.id.etDigiteAqui);//acha o campo de texto pelo id
+                String texto = etDigiteAqui.getText().toString(); //cria uma variável com o conteúdo que está escrito no campo de texto
+                Intent intent = new Intent(MainActivity.this, ProximaActivity.class); //cria uma variável que funciona como função para mudar de tela
+                intent.putExtra("texto", texto); //salva o texto do campo de texto na variável intent
+                startActivity(intent); //inicializa a "função" intent que muda de tela
             }
         });
     }
